@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Bliend — Launching August 1, 2026</title>
 <meta name="description" content="Bliend is a creative company. Experience the power of creativity. Explore unpredictable visions. Evolve together. Launching August 1, 2026." />
-<meta name="theme-color" content="#08080e" />
+<meta name="theme-color" content="#060a0c" />
 <meta name="color-scheme" content="dark" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,16 +17,15 @@
 
 <style>
   :root{
-    --base:#08080e;
-    --text:#f4f4f7;
-    --muted:#9a9aa8;
-    --focus:#9b8bff;
+    --base:#060a0c;
+    --text:#f3f6f6;
+    --muted:#92a3a2;
+    --focus:#7ed957;
 
-    /* the blend palette */
-    --amber:#ff8a3d;
-    --coral:#ff5c7a;
-    --violet:#9b5cff;
-    --blue:#4d86ff;
+    /* brand gradient */
+    --teal:#0097b2;
+    --green:#7ed957;
+    --mid:#39c58f;     /* the natural blend of the two, for the E sweep */
 
     --fs-display: clamp(2.1rem, 1.1rem + 6vw, 5rem);
     --fs-launch:  clamp(0.66rem, 0.6rem + 0.25vw, 0.8rem);
@@ -47,7 +46,7 @@
     overflow:hidden;
   }
 
-  /* ---- the signature: vivid auras that drift and blend on the dark ground ---- */
+  /* ---- signature: brand-gradient auras that drift and merge on the dark ground ---- */
   .bg{ position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
   .aura{
     position:absolute; border-radius:50%;
@@ -58,33 +57,31 @@
     animation-fill-mode:forwards;
   }
   .a1{ width:58vmax; height:58vmax; top:-16vmax; left:-16vmax;
-       background:radial-gradient(circle, var(--coral), transparent 62%);
+       background:radial-gradient(circle, var(--teal), transparent 62%);
        animation:fadeA 1.9s ease .15s forwards, drift1 26s ease-in-out 1.9s infinite; }
   .a2{ width:62vmax; height:62vmax; top:14%; right:-18vmax;
-       background:radial-gradient(circle, var(--violet), transparent 62%);
+       background:radial-gradient(circle, var(--green), transparent 62%);
        animation:fadeA 1.9s ease .3s forwards, drift2 32s ease-in-out 2.1s infinite; }
   .a3{ width:50vmax; height:50vmax; bottom:-20vmax; left:14vmax;
-       background:radial-gradient(circle, var(--blue), transparent 62%);
+       background:radial-gradient(circle, var(--teal), transparent 62%);
        animation:fadeA 1.9s ease .45s forwards, drift3 29s ease-in-out 2.3s infinite; }
   .a4{ width:34vmax; height:34vmax; top:34%; left:30%;
-       background:radial-gradient(circle, var(--amber), transparent 60%);
+       background:radial-gradient(circle, var(--green), transparent 60%);
        animation:fadeA 1.9s ease .6s forwards, drift1 36s ease-in-out 2.5s infinite reverse; }
 
-  @keyframes fadeA{ to{ opacity:.58; } }
+  @keyframes fadeA{ to{ opacity:.56; } }
   @keyframes drift1{ 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(8vw,6vh) scale(1.12)} }
   @keyframes drift2{ 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-7vw,5vh) scale(1.16)} }
   @keyframes drift3{ 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(6vw,-6vh) scale(1.1)} }
 
-  /* legibility veil so bright text always sits on a calm field */
   .veil{ position:fixed; inset:0; z-index:1; pointer-events:none;
-         background:radial-gradient(120% 90% at 30% 50%, rgba(8,8,14,0.55), rgba(8,8,14,0) 60%); }
+         background:radial-gradient(120% 90% at 30% 50%, rgba(6,10,12,0.55), rgba(6,10,12,0) 60%); }
 
-  /* film grain */
   .grain{ position:fixed; inset:0; z-index:3; pointer-events:none; opacity:.05; mix-blend-mode:overlay;
           background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
           background-size:140px 140px; }
 
-  /* ---- cluster: left spine, vertically centred (unchanged) ---- */
+  /* ---- cluster: left spine, vertically centred ---- */
   .stage{
     position:relative;
     z-index:2;
@@ -110,10 +107,10 @@
     letter-spacing:-0.02em;
     text-align:left;
   }
-  /* static E = a window into the blend */
+  /* static E = a window into the brand gradient */
   .e{
     font-weight:800;
-    background:linear-gradient(115deg, var(--amber), var(--coral) 34%, var(--violet) 66%, var(--blue));
+    background:linear-gradient(118deg, var(--teal), var(--mid) 50%, var(--green));
     background-size:220% 220%;
     -webkit-background-clip:text;
     background-clip:text;
